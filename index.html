@@ -1,0 +1,53 @@
+
+
+<title>ExTabs Engine</title>
+<a href="https://sites.google.com/hlcs.me/music101/webengine"><img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/07/attachment_80660538-e1531899559548.jpg?auto=format&q=60&fit=max&w=930" width="22px" style="float:left;border-radius:10px;" /></a>
+<input id="site" placeholder="Site here (URL)" style="margin: 0 10 0 5;" value="https://google.com"></input>
+<button style="margin: 0 -13;" onclick="go()">Go!</button>
+<span style="margin: 7 20 -4 15;">ExTabs is ran by Music101</span>
+<a href="//sites.google.com/hlcs.me/music101/"><button style="float:right;">About us</button></a>
+<hr>
+<iframe style="width:100%;height:95%;border:none;" src="//google.com" id="web"></iframe>
+<script>
+document.title("ExTabs | Search")
+function go() {
+    var inp = document.getElementById("site").value;
+    var webframe = document.getElementById("web");
+    if (inp.includes("https://")) {
+        
+    document.title = "ExTabs | Browsing";
+    webframe.src = inp;
+    } else {
+    document.title = "ExTabs | Browsing";
+    webframe.src = "https://" + inp;
+    };
+};
+</script>
+<style>
+    body {
+        font-family: sans-serif, fantasy;
+    }
+    button {
+        background: white;
+        border-color: lime;
+        padding: 1 10;
+        border-radius: 5px;
+    }
+    button:hover {
+        border-color: green;
+        cursor: pointer;
+    }
+    input:hover {
+        border-color: green;
+    }
+    input {
+        border-color: lime;
+        border-radius: 5px;
+    }
+    button:disabled {
+        border: none;
+        color: red;
+        background: orange;
+        padding: 2.6 10;
+    }
+</style>
